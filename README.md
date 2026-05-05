@@ -1,233 +1,343 @@
-# P2-6: Cybersecurity Automation & Scripting
+# P2-6: AWS Automation & Infrastructure as Code
 
 ## Overview
 
-This repo is planned to document practical cybersecurity automation across Python, PowerShell, and Bash.
+This repository is part of **Cybersecurity Portfolio 2: AWS Cloud Security & Engineering**.
 
-It is intended to focus on small tools and scripts for log parsing, alert enrichment, evidence collection, and repeatable security tasks that support SecOps, SOC, and incident response workflows.
+The purpose of this project is to design and document AWS automation and Infrastructure as Code workflows. This lab will focus on AWS CLI usage, Bash scripting, Python/boto3 automation, Terraform basics, security validation checks, and resource cleanup automation.
 
-This project is part of Portfolio 2 and is planned as a follow-on phase after completion of Portfolio 1, which provides the lab environment, telemetry sources, and security workflows that can later feed automation use cases.
+This project is planned as the sixth AWS-focused lab in Portfolio 2 because automation should build on the earlier AWS account, VPC, logging, storage, and EC2 security projects.
 
 ---
 
 ## Status
 
-**Current state:** Planned  
-**Execution state:** Not yet started  
-**Prerequisite:** Portfolio 1 completion
+**Planned**
 
-This repo is being prepared in advance so that the project scope, script categories, sample use cases, and expected deliverables are already defined before hands-on scripting work begins.
+This project has not been implemented yet.
 
----
+Work on this repository will begin after the required Portfolio 1 homelab foundation is completed and after the earlier AWS Portfolio 2 labs are prepared.
 
-## Planned Objectives
+Current status:
 
-This project is intended to build practical automation skills, including:
-
-- creating cross-platform security scripts
-- parsing and normalizing Windows, Linux, and Sysmon logs
-- automating alerting and enrichment tasks
-- detecting suspicious patterns with scripting
-- building reusable utilities that support SOC and IR workflows
-
----
-
-## Planned Repository Structure
-
-- `docs/` — script explanations, usage notes, templates, and workflow documentation
-- `scripts/` — Python, PowerShell, and Bash automation tools
-- `lab/` — sample logs, test datasets, screenshots, and script output
-- `.github/` — issue or pull request templates (optional)
+- [ ] Automation design plan created
+- [ ] AWS CLI workflows documented
+- [ ] Bash automation plan created
+- [ ] Python/boto3 plan created
+- [ ] Terraform IaC plan created
+- [ ] Security validation checks planned
+- [ ] Cleanup automation plan created
+- [ ] Cost-control notes created
+- [ ] Screenshots and evidence collected
+- [ ] Final documentation completed
 
 ---
 
-## Planned Lab Setup
+## Portfolio Context
 
-This project is planned to use systems and data sources built through the earlier portfolio work.
+### Portfolio 1 Foundation
 
-### Planned Source Systems
-Potential script inputs or automation targets may include:
+Portfolio 1 focuses on building a local cybersecurity homelab using Proxmox, pfSense, network segmentation, Active Directory, Splunk, and vulnerable systems.
 
-- Windows 10 or Windows 11 systems
-- Linux systems such as Ubuntu or Debian
-- Sysmon log sources
-- exported logs from the Proxmox-based lab
-- optional Azure-based logs or cloud-related outputs later where useful
+Portfolio 1 builds the local infrastructure and security foundation.
 
-### Planned Runtime Environments
-Planned script execution may occur on:
+### Portfolio 2 Direction
 
-- Windows systems
-- Linux systems
-- Kali Linux
-- WSL where useful
-- lab virtual machines hosted in Proxmox
+Portfolio 2 expands local infrastructure and security concepts into AWS cloud security and cloud engineering.
 
-### Planned Tools
-Expected tooling may include:
-
-- Python 3.x
-- PowerShell
-- Bash
-- standard system utilities available in Windows or Linux environments
-
-The goal is to build scripts that are practical and easy to test inside the existing lab rather than dependent on heavy external infrastructure.
+This repository focuses on automating AWS tasks and introducing Infrastructure as Code practices.
 
 ---
 
-## Planned Automation Focus Areas
+## Project Goal
 
-### Python Automation
-Planned Python automation may include:
+The goal of this project is to understand how AWS infrastructure and security checks can be automated using CLI tools, scripts, and Infrastructure as Code.
 
-- log parsing and normalization
-- suspicious pattern detection
-- JSON event parsing
-- regex-based matching
-- simple automated reporting
-- enrichment of selected indicators using external sources where appropriate
+By the end of this project, the planned AWS environment should include documentation for:
 
-### PowerShell Automation
-Planned PowerShell automation may include:
-
-- failed login review
-- Windows Event Log parsing
-- security log export
-- Defender or security-setting checks
-- Sysmon evidence collection
-- detection support for brute-force or suspicious activity patterns
-
-### Bash Automation
-Planned Bash automation may include:
-
-- SSH log review
-- file integrity or configuration checks
-- firewall verification
-- auditd-related checks
-- parsing Linux authentication logs
-- user or permission auditing
-- simple command-history or suspicious-command review
+- AWS CLI workflows
+- Bash automation examples
+- Python/boto3 automation examples
+- Terraform starter templates
+- Security validation checks
+- Resource cleanup automation
+- Cost-control considerations
+- Redacted evidence and screenshots
 
 ---
 
-## Planned Workflow
+## Planned Skills
 
-Once execution begins, the intended workflow for this repo is:
+This project is intended to develop hands-on familiarity with:
 
-### 1. Define a small automation use case
-Planned examples may include:
-
-- parsing logs for suspicious activity
-- extracting evidence from Windows or Linux systems
-- converting raw output into cleaner summaries
-- automating repetitive analyst review tasks
-
-### 2. Build the script
-Planned activities may include:
-
-- creating a script in Python, PowerShell, or Bash
-- testing it against sample logs or live lab output
-- improving input handling and output readability
-- documenting the script purpose and expected usage
-
-### 3. Validate the output
-Planned activities may include:
-
-- running the script against sample data
-- comparing results against known lab activity
-- saving screenshots or output examples
-- refining the logic when false positives or weak parsing are observed
-
-### 4. Store supporting evidence
-Planned artifacts may include:
-
-- sample logs in `lab/`
-- output screenshots
-- markdown usage notes
-- script-specific documentation in `docs/`
+- AWS CLI
+- Bash scripting
+- Python scripting
+- boto3 basics
+- Terraform basics
+- Infrastructure as Code
+- Cloud resource automation
+- Security validation automation
+- Cleanup scripting
+- Repeatable deployment workflows
+- Cost-conscious automation
+- Technical documentation
 
 ---
 
-## Planned Example Usage
+## Planned Tools and Services
 
-Example command patterns may later include:
+The following tools, AWS services, and features may be used in this project:
 
-### Python
-```bash
-python3 scripts/python/log_parser.py sample.log
-```
+| Tool / Service | Planned Use |
+|---|---|
+| AWS CLI | Query and manage AWS resources |
+| Bash | Automate simple AWS tasks and cleanup |
+| Python | Build basic automation scripts |
+| boto3 | Interact with AWS services using Python |
+| Terraform | Define AWS infrastructure as code |
+| IAM | Control permissions for automation |
+| Amazon VPC | Potential IaC deployment target |
+| Amazon EC2 | Potential IaC deployment target |
+| Amazon S3 | Potential automation and validation target |
+| CloudTrail | Review automation activity |
+| CloudWatch | Optional monitoring validation |
 
-### PowerShell
-```powershell
-pwsh scripts/powershell/failed_login_detector.ps1
-```
+---
 
-### Bash
-```bash
-bash scripts/bash/update_audit.sh
-```
+## Planned Lab Sections
 
-Actual filenames and script structure will be defined as implementation begins.
+### 1. AWS CLI Workflows
+
+Planned tasks:
+
+- Configure AWS CLI safely
+- Validate caller identity
+- List basic AWS resources
+- Query IAM, S3, EC2, and VPC resources
+- Document useful commands
+- Avoid exposing credentials
+
+Expected outcome:
+
+> AWS CLI is understood as a command-line interface for managing and validating AWS resources.
+
+---
+
+### 2. Bash Automation
+
+Planned tasks:
+
+- Create simple Bash scripts for resource review
+- Automate basic inventory collection
+- Automate cleanup checks
+- Add comments and safe execution notes
+- Avoid destructive commands without confirmation
+
+Expected outcome:
+
+> Bash scripts are used to automate repeatable AWS review tasks.
+
+---
+
+### 3. Python and boto3 Automation
+
+Planned tasks:
+
+- Review boto3 basics
+- Write simple scripts to list AWS resources
+- Query S3 bucket settings
+- Query EC2 instances
+- Query security groups
+- Format findings for documentation
+
+Expected outcome:
+
+> Python and boto3 are used to automate AWS security and inventory checks.
+
+---
+
+### 4. Terraform Infrastructure as Code
+
+Planned tasks:
+
+- Review Terraform basics
+- Create starter Terraform structure
+- Plan simple AWS resources
+- Document `terraform init`, `plan`, `apply`, and `destroy`
+- Avoid deploying complex or expensive resources
+- Use variables and outputs safely
+
+Expected outcome:
+
+> Terraform is introduced as a repeatable method for defining AWS infrastructure.
+
+---
+
+### 5. Security Validation Checks
+
+Planned tasks:
+
+- Plan checks for public S3 exposure
+- Plan checks for broad security group rules
+- Plan checks for running EC2 instances
+- Plan checks for missing tags
+- Plan checks for cleanup readiness
+- Document findings
+
+Expected outcome:
+
+> Automation is used to support security review, not just resource deployment.
+
+---
+
+### 6. Cleanup Automation
+
+Planned tasks:
+
+- Create safe cleanup checklist
+- Plan scripts that identify resources to remove
+- Avoid automatic deletion without review
+- Document cleanup commands
+- Confirm resources are removed after testing
+
+Expected outcome:
+
+> Resource cleanup becomes part of the automation workflow to reduce cost and risk.
 
 ---
 
 ## Planned Deliverables
 
-This repo is expected to eventually include:
+This repository is expected to include:
 
-- Python log parsing or enrichment tools
-- PowerShell Windows analysis or evidence-collection scripts
-- Bash Linux auditing or review scripts
-- sample logs for testing
-- documentation explaining what each script does
-- saved output or screenshots showing successful execution
-
----
-
-## Planned Skill Areas
-
-This project is intended to help build experience in:
-
-- automating repetitive security tasks
-- parsing and normalizing logs
-- pattern matching and simple detection logic
-- Windows, Linux, and Sysmon log handling
-- scripting for analyst efficiency
-- evidence collection and response support
-- using automation to improve repeatability in security workflows
+- Automation design plan
+- AWS CLI workflow documentation
+- Bash script plan
+- Python/boto3 script plan
+- Terraform starter plan
+- Security validation check documentation
+- Cleanup automation plan
+- Example scripts
+- Terraform starter files
+- Cost-control notes
+- Redacted screenshots
+- Lessons learned
+- Final project summary
 
 ---
 
-## Planned Next Steps
+## Proposed Repository Structure
 
-When work begins on this repo, the initial implementation focus will likely be:
-
-- choose the first few automation use cases from the lab
-- prepare sample log data and test inputs
-- build one Python, one PowerShell, and one Bash script
-- document how each script works and what problem it solves
-- save execution evidence and sample outputs in a repeatable format
-
-Future expansion may include:
-
-- a Python tool to detect brute-force patterns
-- a PowerShell script to export and compress Sysmon logs
-- a Bash script to check Linux hardening status
-- scripts that query external enrichment sources where appropriate
-- a small menu-based toolkit or bundled automation set
+    P2-6-aws-automation-iac/
+    ├── README.md
+    ├── docs/
+    │   ├── automation-design-plan.md
+    │   ├── aws-cli-workflows.md
+    │   ├── bash-automation-plan.md
+    │   ├── python-boto3-plan.md
+    │   ├── terraform-iac-plan.md
+    │   ├── security-validation-checks.md
+    │   ├── cleanup-automation-plan.md
+    │   ├── cost-control-notes.md
+    │   └── lessons-learned.md
+    ├── scripts/
+    │   ├── README.md
+    │   ├── bash/
+    │   │   └── README.md
+    │   └── python/
+    │       └── README.md
+    ├── terraform/
+    │   └── README.md
+    ├── diagrams/
+    │   └── README.md
+    └── screenshots/
+        └── README.md
 
 ---
 
-## Planned Related Projects
+## Security Notes
 
-### Repo 1 — Security Operations & Detection Engineering
-This repo may later use automation to generate, enrich, or support detection-related workflows.
+Sensitive information will not be committed to this repository.
 
-### Repo 2 — Vulnerability Management
-This repo may later use automation to help parse scan data, summarize findings, or support risk classification.
+This includes:
+
+- AWS account ID
+- Access keys
+- Secret access keys
+- Session tokens
+- Private SSH keys
+- Terraform state files containing sensitive data
+- `.env` files
+- AWS credentials files
+- Unredacted ARNs
+- Unredacted screenshots
+- Any credential material
+
+Automation must be designed carefully because scripts can quickly create, modify, or delete cloud resources.
 
 ---
 
-## License
+## Cost-Control Notes
 
-MIT — see `LICENSE`.
+This project is designed to stay within the AWS Free Tier or near-free usage.
+
+Special care will be taken with:
+
+- Terraform-created resources
+- EC2 instances
+- EBS volumes
+- EBS snapshots
+- Elastic IP addresses
+- NAT Gateway
+- Load balancers
+- CloudWatch logs
+- S3 storage
+- Accidentally repeated script execution
+
+The goal is to learn automation safely without creating unnecessary cost.
+
+---
+
+## Relationship to AWS Solutions Architect Associate
+
+This project supports foundational knowledge for the **AWS Certified Solutions Architect – Associate** certification by focusing on:
+
+- Infrastructure deployment concepts
+- Resource configuration
+- IAM permissions
+- Networking resources
+- Compute resources
+- Storage resources
+- Monitoring validation
+- Cost-aware architecture
+
+This repository is not a certification study guide. It is a hands-on portfolio project designed to support practical AWS learning.
+
+---
+
+## Resume Skill Alignment
+
+This project is intended to support resume experience related to:
+
+- AWS CLI
+- Python/boto3 automation
+- Bash scripting
+- Terraform basics
+- Infrastructure as Code
+- Cloud security validation
+- Resource inventory automation
+- Cleanup automation
+- Cloud engineering documentation
+
+Example resume bullet after completion:
+
+> Automated AWS resource inventory, security validation, and cleanup workflows using AWS CLI, Bash, Python/boto3, and Terraform to support repeatable cloud security and engineering practices.
+
+---
+
+## Current Status Summary
+
+This repository is currently in the planning stage.
+
+Implementation will begin after the required Portfolio 1 foundation is completed and after the earlier AWS Portfolio 2 labs are prepared.
