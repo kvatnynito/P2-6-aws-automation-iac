@@ -1,9 +1,0 @@
-The lab/ folder is where your scripts need sample inputs so people can see how they work.
-
-✅ fake logs for your Python parser
-✅ event logs for your Powershell scripts
-✅ input CSVs
-✅ test malware logs
-✅ automation demo outputs
-
-You manually upload these files.
